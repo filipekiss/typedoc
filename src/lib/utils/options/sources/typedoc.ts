@@ -200,4 +200,10 @@ export function addTypeDocOptions(options: Options) {
         help: 'Emits a list of broken symbol [[navigation]] links after documentation generation',
         type: ParameterType.Boolean
     });
+    options.addDeclaration({
+        name: "compiler",
+        help: "Select which compiler to used, 'typescript' or 'ttypescript'",
+        type: ParameterType.String,
+        defaultValue: "typescript"
+    });
 }

@@ -88,6 +88,9 @@ export class Application extends ChildableComponent<
     @BindOption('tsconfig')
     project!: string;
 
+    @BindOption('compiler')
+    compiler!: string;
+
     /**
      * The version number of TypeDoc.
      */
@@ -157,7 +160,7 @@ export class Application extends ChildableComponent<
      * Return the path to the TypeScript compiler.
      */
     public getTypeScriptPath(): string {
-        return Path.dirname(require.resolve('typescript'));
+        return Path.dirname(require.resolve(this.compiler));
     }
 
     public getTypeScriptVersion(): string {
